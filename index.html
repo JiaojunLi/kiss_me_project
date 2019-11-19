@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        main {
+            width: 604px;
+            height: 794px;
+            margin: 50px auto;
+            background: #aaa;
+            overflow: hidden;
+            position: relative;
+        }
+
+        main::before,
+        main::after {
+            position: absolute;
+            top: 0;
+            border-radius: 5px;
+            width: 8px;
+            height: 80px;
+            display: block;
+            content: "";
+            background: #000;
+            transform: rotate(45deg);
+        }
+
+        main::before {
+            left: 210px;
+            transform: rotate(-45deg);
+        }
+
+        main::after {
+            right: 210px;
+        }
+
+        header {
+            width: 420px;
+            height: 190px;
+            margin: 32px auto 0;
+            background: #0f7f12;
+            border-top-left-radius: 210px;
+            border-top-right-radius: 210px;
+            position: relative;
+            z-index: 2;
+        }
+
+        header::after,
+        header::before {
+            position: absolute;
+            background: #fff;
+            display: block;
+            content: "";
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 95px;          
+        }
+
+        header::after {
+            left: 94px;
+        }
+
+        header::before {
+            right: 94px;
+        }
+
+        section{
+            position: relative;
+            width: 420px;height: 380px;
+
+            margin: 18px auto 0;
+            background: #0f7f12;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;            
+        }
+        section::before,section::after{
+            position: absolute;          
+            width: 76px;height: 266px;
+            background: #0f7f12;
+            border-radius: 25px;
+            display: block;
+            content: "";
+            top: 37px;
+        }
+        section::before{
+            left: -86px;
+        }
+        section::after{
+            right: -86px;
+        }
+        footer{
+            position: relative;
+            width: 420px;
+            margin: 0 auto;
+        }
+        footer::after,footer::before{
+            position:absolute;
+            top: 20px;
+            width: 76px;height: 152px;
+            display: block;
+            content: "";
+            background: #0f7f12;
+            border-radius: 25px;
+        }
+        footer::before{
+            left: 76px;
+        }footer::after{
+            right:  76px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header></header>
+        <section></section>
+        <footer></footer>
+    </main>
+</body>
+
+</html>
