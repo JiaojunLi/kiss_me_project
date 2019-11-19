@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid black;
+      display: none;
+    }
+
+    div.active {
+      display: block;
+    }
+
+    input.clicked {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 默认一开始第一个按钮变红 -->
+  <input type="button" value="0" class="clicked">
+  <input type="button" value="1">
+  <input type="button" value="2">
+  <!-- 默认一开始显示第一个div -->
+  <div class="active">
+    000000000000000000000000
+  </div>
+  <div>
+    111111111111111111111111
+  </div>
+  <div>
+    222222222222222222222222
+  </div>
+
+  <script>
+    //选择元素
+    var aInput = document.getElementsByTagName("input")
+    var aDiv = document.getElementsByTagName("div")
+    //批量绑定事件
+    for(var i = 0; i < aInput.length; i++) {
+      aInput[i].onclick = function() {
+        //事件渲染
+        //3. 内部渲染
+          //1. 先将所有按钮都洗白
+          //2. 先将所有的div都隐藏
+          for(var j = 0; j < 3; j++) {
+            aInput[j].className = ""
+            aDiv[j].className = ""
+          } 
+          //3. 找到当前按钮并将其变红色
+          this.className = "clicked"
+          //4. 找到当前按钮对应div将其显示
+          aDiv[this.index].className = "active"
+      }
+      //一开始循环刚开始此时i等于0 所以aInput[i] => aInput[0] => 第一个input
+      //aInput[i].index 第一个input给他一个属性叫"index" 值为当前的i 也就"0"
+      aInput[i].index = i;
+    }
+  </script>
+</body>
+
+</html>
