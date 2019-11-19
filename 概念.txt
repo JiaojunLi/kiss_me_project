@@ -1,0 +1,25 @@
+基础概念
+
+功能模块化:
+1.匿名函数自执行的方式
+2.js对象的管理方式
+
+
+html/css/js
+webview接口 安卓 ios
+
+混合开发的方法: hybird app
+原生开发 : native app
+
+1.crovda 命令打包
+2.Dcloud 云打包
+3.跨端框架 react native weex
+4.appcan平台
+
+ 移动端布局h
+ 
+1. rem  
+2. vw  : 1vw 当前设备可视区的 1%的宽  
+3. vh  : 1vh 当前设备可视区的 1%的高  
+
+多引一个包 掉一个库 就会多一次HTTP请求
